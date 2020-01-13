@@ -15,28 +15,19 @@ public class BalancedParentheses {
 
             if(c == '(')
                 stack.push(c);
-            else if(c == '{')
-                stack.push(c);
             else if(c == ')')
-                if(stack.empty())
+                if(stack.isEmpty())
                     return false;
                 else if(stack.peek() == '(')
                     stack.pop();
                 else
                     return false;
-            else if(c == '}')
-                if(stack.empty())
-                    return false;
-                else if(stack.peek() == '{')
-                    stack.pop();
-                else
-                    return false;
         }
-        return stack.empty();
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
-        String str = "(– b + (b^2 – 4*a*c)^(0.5/ 2*a))";
+        String str = "(– b + (b2 – 4*a*c)^0.5) / 2*a ";
         System.out.println(isParenthesisMatch(str));
     }
 }

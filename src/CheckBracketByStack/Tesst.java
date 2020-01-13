@@ -3,41 +3,40 @@ package CheckBracketByStack;
 import java.util.Stack;
 
 public class Tesst {
-
-    public static void main(String[] args) {
-        String checkBalancedExpr1=checkBalancedParentesis("s * (s – a) * (s – b) * (s – c)");
-        System.out.println("s * (s – a) * (s – b) * (s – c) : "+checkBalancedExpr1);
-        String checkBalancedExpr2=checkBalancedParentesis("((– b + (b2 – 4*a*c)^0.5) / 2*a");
-        System.out.println("(– b + (b2 – 4*a*c)^0.5) / 2*a : "+checkBalancedExpr2);
-        String checkBalancedExpr3=checkBalancedParentesis("(– b + (b^2 – 4*a*c)^(0.5/ 2*a))");
-        System.out.println("(– b + (b^2 – 4*a*c)^(0.5/ 2*a)) : "+checkBalancedExpr3);
-
-    }
-    public static String checkBalancedParentesis(String expr)
-    {
-        if (expr.isEmpty())
-            return "Balanced";
+    public static boolean isParenthesisMatch(String str) {
+        if (str.charAt(0) == '{')
+            return false;
 
         Stack<Character> stack = new Stack<Character>();
-        for (int i = 0; i < expr.length(); i++)
-        {
-            char current = expr.charAt(i);
-            if (current == '{' || current == '(' || current == '[')
-            {
-                stack.push(current);
-            }
-            if (current == '}' || current == ')' || current == ']')
-            {
-                if (stack.isEmpty())
-                    return "Not Balanced";
-                char last = stack.peek();
-                if (current == '}' && last == '{' || current == ')' && last == '(' || current == ']' && last == '[')
+
+        char c;
+        for(int i=0; i < str.length(); i++) {
+            c = str.charAt(i);
+
+            if(c == '(')
+                stack.push(c);
+            else if(c == '{')
+                stack.push(c);
+            else if(c == ')')
+                if(stack.isEmpty())
+                    return false;
+                else if(stack.peek() == '(')
                     stack.pop();
                 else
-                    return "Not Balanced";
-            }
+                    return false;
+            else if(c == '}')
+                if(stack.isEmpty())
+                    return false;
+                else if(stack.peek() == '{')
+                    stack.pop();
+                else
+                    return false;
         }
-        return stack.isEmpty()?"Balanced":"Not Balanced";
+        return stack.isEmpty();
     }
 
+    public static void main(String[] args) {
+        String str = "(– b + (b2 – 4*a*c)^0.5) / 2*a ";
+        System.out.println(isParenthesisMatch(str));
+    }
 }

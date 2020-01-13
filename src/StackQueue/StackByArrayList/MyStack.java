@@ -19,7 +19,7 @@ class MyStack {
     }
 
     public int pop() throws Exception {
-        if (isEmpty()) {
+        if (empty()) {
             throw new Exception("Stack is null");
         }
         return arr[--index];
@@ -29,7 +29,7 @@ class MyStack {
         return index;
     }
 
-    public boolean isEmpty() {
+    public boolean empty() {
         if (index == 0) {
             return true;
         }
