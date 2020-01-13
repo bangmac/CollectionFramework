@@ -2,14 +2,15 @@ package CheckBracketByStack;
 
 import java.util.Stack;
 
-public class CheckBalancedParentesisMain {
+public class Tesst {
 
     public static void main(String[] args) {
-        String checkBalancedExpr1=checkBalancedParentesis("a*(b+c)-(d*e)");
-        System.out.println("a*(b+c)-(d*e) : "+checkBalancedExpr1);
-        String checkBalancedExpr2=checkBalancedParentesis("(a*(b-c)*{d+e}");
-        System.out.println("(a*(b-c)*{d+e} : "+checkBalancedExpr2);
-        String checkBalancedExpr3=checkBalancedParentesis("s * (s – a) * (s – b * (s – c)");
+        String checkBalancedExpr1=checkBalancedParentesis("s * (s – a) * (s – b) * (s – c)");
+        System.out.println("s * (s – a) * (s – b) * (s – c) : "+checkBalancedExpr1);
+        String checkBalancedExpr2=checkBalancedParentesis("((– b + (b2 – 4*a*c)^0.5) / 2*a");
+        System.out.println("(– b + (b2 – 4*a*c)^0.5) / 2*a : "+checkBalancedExpr2);
+        String checkBalancedExpr3=checkBalancedParentesis("(– b + (b^2 – 4*a*c)^(0.5/ 2*a))");
+        System.out.println("(– b + (b^2 – 4*a*c)^(0.5/ 2*a)) : "+checkBalancedExpr3);
 
     }
     public static String checkBalancedParentesis(String expr)
