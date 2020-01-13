@@ -1,7 +1,7 @@
 package ReverseArrayByStack;
 
 import java.util.Arrays;
-        import java.util.Stack;
+import java.util.Stack;
 
 public class ReverseArrayUsingStack {
 
@@ -20,7 +20,7 @@ public class ReverseArrayUsingStack {
 
     public static void main(String[] args) {
 
-        int[] a = { 41, 2, 151, 13, 43, 12 };
+        int[] a = {41, 2, 151, 13, 43, 12};
 
         System.out.println(Arrays.toString(a));
 
