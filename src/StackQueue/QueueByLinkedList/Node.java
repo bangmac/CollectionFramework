@@ -1,4 +1,4 @@
-package StackQueue.Practive01;
+package StackQueue.QueueByLinkedList;
 
 class Node {
     public int key;

@@ -1,4 +1,4 @@
-package StackQueue.Practive01;
+package StackQueue.QueueByLinkedList;
 
 public class MyLinkedListQueue {
     private Node head;

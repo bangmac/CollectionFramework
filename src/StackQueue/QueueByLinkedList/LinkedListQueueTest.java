@@ -1,4 +1,4 @@
-package StackQueue.Practive01;
+package StackQueue.QueueByLinkedList;
 
 public class LinkedListQueueTest {
     public static void main(String[] args) {
