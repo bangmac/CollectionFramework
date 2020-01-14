@@ -38,5 +38,12 @@ public class MapDemo{
         while (iterator.hasNext()){
             System.out.println(iterator.next());
         }
+        // tim kiem
+        String keyword = "Hello";
+        if (testMap.containsKey(keyword)){
+            System.out.println(testMap.get(keyword));
+        }else {
+            System.out.println("not found");
+        }
     }
 }
